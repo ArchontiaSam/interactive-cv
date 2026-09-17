@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archontia Samara — Interactive CV Workstation</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: #0b0f19;
+      color: #f1f5f9;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .laptop-container {
+      perspective: 1400px;
+    }
+
+    .laptop-screen {
+      border: 12px solid #1e293b;
+      border-radius: 16px 16px 0 0;
+      background: #020617;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    .laptop-keyboard {
+      height: 16px;
+      background: #334155;
+      border-radius: 0 0 20px 20px;
+      transform: perspective(500px) rotateX(15deg);
+      transform-origin: top center;
+      box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Custom thin scrollbar for inner website */
+    .inner-website {
+      scrollbar-width: thin;
+      scrollbar-color: #10b981 #1e293b;
+    }
+    .inner-website::-webkit-scrollbar {
+      width: 6px;
+    }
+    .inner-website::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    .inner-website::-webkit-scrollbar-thumb {
+      background-color: #10b981;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Intro Hero Screen -->
+  <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
+    <span class="px-3 py-1 text-xs font-semibold tracking-wider text-emerald-400 bg-emerald-950/50 border border-emerald-800 rounded-full mb-4">
+      INTERACTIVE WORKSTATION
+    </span>
+    <h1 class="text-5xl md:text-7xl font-black mb-4 tracking-tight">
+      Archontia Samara
+    </h1>
+    <p class="text-slate-400 text-lg md:text-xl max-w-lg mb-12">
+      Java Developer | B.Sc. Applied Informatics (UOM). Scroll down to browse my CV inside the workstation.
+    </p>
+    <div class="flex flex-col items-center gap-2">
+      <span class="text-xs uppercase tracking-widest text-slate-500 font-semibold">Scroll Down</span>
+      <div class="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center p-1">
+        <div class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Static Laptop Workstation Section (No Zoom) -->
+  <section class="min-h-screen py-16 w-full flex items-center justify-center px-4">
+      
+      <!-- Laptop Structure (Fixed scale) -->
+      <div class="laptop-container w-[95%] max-w-[1000px] flex flex-col items-center">
+        
+        <!-- Laptop Screen -->
+        <div class="laptop-screen w-full aspect-[16/10] relative flex items-center justify-center">
+          
+          <!-- Inner CV Page (Scrollable inside the screen) -->
+          <div class="inner-website absolute inset-0 w-full h-full bg-[#0a0f1d] overflow-y-auto p-6 md:p-10 flex flex-col gap-8 text-left">
+            
+            <!-- CV Header -->
+            <header class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-6">
+              <div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white">ARCHONTIA SAMARA</h2>
+                <p class="text-emerald-400 font-semibold text-sm md:text-base mt-1">Java Developer | B.Sc. in Applied Informatics (UOM)</p>
+              </div>
+              <div class="text-left md:text-right mt-3 md:mt-0 text-xs md:text-sm text-slate-400 space-y-1">
+                <p>📍 Thessaloniki, Greece</p>
+                <p>✉️ <a href="mailto:samararxontia@gmail.com" class="hover:text-emerald-400">samararxontia@gmail.com</a></p>
+                <p>📞 +30 6981097693</p>
+                <p>🔗 <a href="https://github.com/ArchontiaSam" target="_blank" class="hover:text-emerald-400">GitHub</a> | <a href="https://www.linkedin.com/in/archontia-samara-001a21252/" target="_blank" class="hover:text-emerald-400">LinkedIn</a></p>
+              </div>
+            </header>
+
+            <!-- Professional Profile -->
+            <section class="space-y-2">
+              <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 border-l-2 border-emerald-500 pl-2">Professional Profile</h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Graduate of Applied Informatics (UOM). Entry-Level <strong>Java Developer</strong> focused on clean OOP code, backend service development (Spring Boot / Java ecosystem), and platform/application logic.
+              </p>
+            </section>
+
+            <!-- Education -->
+            <section class="space-y-2">
+              <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 border-l-2 border-emerald-500 pl-2">Education</h3>
+              <div class="text-sm text-slate-300">
+                <div class="flex justify-between flex-wrap font-semibold text-white">
+                  <span>B.Sc. in Applied Informatics, University of Macedonia (UOM)</span>
+                  <span class="text-emerald-400 text-xs">Graduation: 2026</span>
+                </div>
+                <p class="text-slate-400 text-xs mt-1">
+                  <em>Track:</em> Computer Science and Technology. Coursework: OOP (Java), Parallel/Distributed Computing, Code Optimization, Data Structures, Databases, Software Engineering, Platform/App Dev.
+                </p>
+              </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="space-y-2">
+              <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 border-l-2 border-emerald-500 pl-2">Technical Skills</h3>
+              <ul class="text-xs md:text-sm text-slate-300 space-y-1 list-disc list-inside">
+                <li><strong>Languages:</strong> Java (OOP), C, Python, SQL, TypeScript</li>
+                <li><strong>Backend / Tools:</strong> Spring Boot (REST, Data/JPA), Swagger/OpenAPI, Git, Maven/Gradle, @Scheduled tasks</li>
+                <li><strong>Frameworks / IDEs:</strong> Java/Spring, Angular basics, IntelliJ IDEA, Eclipse, Android Studio</li>
+                <li><strong>Practices:</strong> Clean Code, OOP Design Patterns</li>
+              </ul>
+            </section>
+
+            <!-- Projects -->
+            <section class="space-y-4">
+              <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 border-l-2 border-emerald-500 pl-2">Projects</h3>
+              
+              <div class="space-y-1">
+                <div class="flex justify-between items-baseline flex-wrap text-sm">
+                  <a href="https://github.com/ArchontiaSam/Ticket-Smart" target="_blank" class="font-bold text-white hover:text-emerald-400">Ticket-Smart ↗</a>
+                  <span class="text-xs text-slate-400 italic">Java / Spring Boot / OOP</span>
+                </div>
+                <ul class="text-xs text-slate-300 list-disc list-inside space-y-0.5 pl-2">
+                  <li>Built REST API for users, events, and ticket reservations with full CRUD and Swagger/OpenAPI docs.</li>
+                  <li>Implemented reservation logic (<code>tryReserveTicket</code>) and automated expiration cleanup using <code>@Scheduled</code>.</li>
+                  <li>Implemented dynamic pricing strategy using OOP design patterns (<code>PricingStrategy</code>).</li>
+                </ul>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between items-baseline flex-wrap text-sm">
+                  <a href="https://github.com/ArchontiaSam/SkillSwap" target="_blank" class="font-bold text-white hover:text-emerald-400">SkillSwap ↗</a>
+                  <span class="text-xs text-slate-400 italic">Java / Spring Boot + Angular UI</span>
+                </div>
+                <ul class="text-xs text-slate-300 list-disc list-inside space-y-0.5 pl-2">
+                  <li>Developed backend service logic with Spring Boot for peer-to-peer skill-sharing workflows and structured data handling.</li>
+                  <li>Integrated basic Angular frontend UI for platform interaction alongside modular OOP architecture.</li>
+                </ul>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between items-baseline flex-wrap text-sm">
+                  <a href="https://github.com/ArchontiaSam/GoGreen" target="_blank" class="font-bold text-white hover:text-emerald-400">GoGreen ↗</a>
+                  <span class="text-xs text-slate-400 italic">Java / Application Logic</span>
+                </div>
+                <ul class="text-xs text-slate-300 list-disc list-inside space-y-0.5 pl-2">
+                  <li>Application logic focused on tracking and gamifying eco-friendly habits and green actions.</li>
+                  <li>Structured data handling, user interaction workflows, and modular OOP architecture.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Certifications & Languages -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-800 pt-4 text-xs">
+              <section class="space-y-1">
+                <h4 class="font-bold text-emerald-400 uppercase">Certifications & Workshops</h4>
+                <p class="text-slate-300">• <strong>Software Testing</strong> | Netcompany-Intrasoft (QA, Manual Testing, SDLC)</p>
+                <p class="text-slate-300">• <strong>Understanding AI & Gemini Academy</strong> | Grow with Google</p>
+              </section>
+              <section class="space-y-1">
+                <h4 class="font-bold text-emerald-400 uppercase">Languages</h4>
+                <p class="text-slate-300">Greek (Native), English (C2 - Proficiency)</p>
+              </section>
+            </div>
+
+            <!-- Footer info inside screen (Clean closing) -->
+            <section class="border-t border-slate-800 pt-4 text-center pb-2 text-xs text-slate-500">
+              Direct Contact: <a href="mailto:samararxontia@gmail.com" class="text-emerald-400 hover:underline">samararxontia@gmail.com</a>
+            </section>
+
+          </div>
+        </div>
+
+        <!-- Laptop Keyboard Base -->
+        <div class="laptop-keyboard w-[102%]"></div>
+        <div class="w-[30%] h-3 bg-slate-700/80 rounded-b-xl mx-auto shadow-inner"></div>
+
+      </div>
+
+  </section>
+
+  <!-- 3. Final Call to Action Section -->
+  <section class="h-[30vh] flex flex-col justify-center items-center bg-slate-950 px-4 text-center">
+    <h3 class="text-2xl font-bold mb-2">Available for Java & Backend Engineering Roles</h3>
+    <p class="text-slate-400 text-sm">Open to full-time positions, hybrid/remote opportunities, and technical collaborations.</p>
+  </section>
+
+</body>
+</html>
