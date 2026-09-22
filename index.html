@@ -24,14 +24,17 @@
       perspective: 1400px;
     }
 
-    .laptop-screen {
+   .laptop-screen {
       border: 12px solid #1e293b;
-      border-radius: 16px 16px 0 0;
+      border-radius: 16px;
       background: #020617;
       overflow: hidden;
       box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+      width: 100%;
+      aspect-ratio: 16/10;
+      position: relative;
     }
-
+    
     .laptop-keyboard {
       height: 16px;
       background: #334155;
@@ -69,7 +72,7 @@
       Archontia Samara
     </h1>
     <p class="text-slate-400 text-lg md:text-xl max-w-lg mb-12">
-      Java Developer | B.Sc. Applied Informatics (UOM). Scroll down to browse my CV inside the workstation.
+      Entry level Java Developer | B.Sc. Applied Informatics (UOM). Scroll down to browse my CV inside the workstation.
     </p>
     <div class="flex flex-col items-center gap-2">
       <span class="text-xs uppercase tracking-widest text-slate-500 font-semibold">Scroll Down</span>
@@ -86,7 +89,7 @@
       <div class="laptop-container w-[95%] max-w-[1000px] flex flex-col items-center">
         
         <!-- Laptop Screen -->
-        <div class="laptop-screen w-full aspect-[16/10] relative flex items-center justify-center">
+        <div class="laptop-screen">
           
           <!-- Inner CV Page (Scrollable inside the screen) -->
           <div class="inner-website absolute inset-0 w-full h-full bg-[#0a0f1d] overflow-y-auto p-6 md:p-10 flex flex-col gap-8 text-left">
@@ -95,7 +98,7 @@
             <header class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-6">
               <div>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-white">ARCHONTIA SAMARA</h2>
-                <p class="text-emerald-400 font-semibold text-sm md:text-base mt-1">Java Developer | B.Sc. in Applied Informatics (UOM)</p>
+                <p class="text-emerald-400 font-semibold text-sm md:text-base mt-1">Entry Java Developer | B.Sc. in Applied Informatics (UOM)</p>
               </div>
               <div class="text-left md:text-right mt-3 md:mt-0 text-xs md:text-sm text-slate-400 space-y-1">
                 <p>📍 Thessaloniki, Greece</p>
@@ -109,7 +112,8 @@
             <section class="space-y-2">
               <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 border-l-2 border-emerald-500 pl-2">Professional Profile</h3>
               <p class="text-slate-300 text-sm leading-relaxed">
-                Graduate of Applied Informatics (UOM). Entry-Level <strong>Java Developer</strong> focused on clean OOP code, backend service development (Spring Boot / Java ecosystem), and platform/application logic.
+                Graduate of Applied Informatics (UOM). <strong>Entry-level Java Developer</strong> focused on clean OOP code, backend service development (Spring Boot / Java ecosystem), and platform/application logic.
+
               </p>
             </section>
 
@@ -197,11 +201,6 @@
 
           </div>
         </div>
-
-        <!-- Laptop Keyboard Base -->
-        <div class="laptop-keyboard w-[102%]"></div>
-        <div class="w-[30%] h-3 bg-slate-700/80 rounded-b-xl mx-auto shadow-inner"></div>
-
       </div>
 
   </section>
