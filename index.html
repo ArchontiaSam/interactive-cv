@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Archontia Samara — Interactive CV Workstation</title>
   
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS CDN (For quick single-file setup; swap to CLI/PostCSS for production) -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
@@ -20,28 +20,42 @@
       font-family: system-ui, -apple-system, sans-serif;
     }
 
-    .laptop-container {
-      perspective: 1400px;
+    .laptop-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 95%;
+      max-width: 1000px;
     }
 
-   .laptop-screen {
+    .laptop-screen {
       border: 12px solid #1e293b;
-      border-radius: 16px;
+      border-bottom: none; /* No bottom border so it connects cleanly with keyboard base */
+      border-radius: 16px 16px 0 0;
       background: #020617;
       overflow: hidden;
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
       width: 100%;
       aspect-ratio: 16/10;
       position: relative;
     }
-    
-    .laptop-keyboard {
-      height: 16px;
-      background: #334155;
-      border-radius: 0 0 20px 20px;
-      transform: perspective(500px) rotateX(15deg);
-      transform-origin: top center;
-      box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.5);
+
+    .laptop-base {
+      width: 110%; /* Slight overhang like a real laptop base */
+      background: linear-gradient(to bottom, #334155, #1e293b);
+      height: 24px;
+      border-radius: 0 0 16px 16px;
+      position: relative;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+    }
+
+    .laptop-trackpad-notch {
+      width: 25%;
+      height: 4px;
+      background: #475569;
+      border-radius: 0 0 6px 6px;
     }
 
     /* Custom thin scrollbar for inner website */
@@ -82,15 +96,12 @@
     </div>
   </section>
 
-  <!-- 2. Static Laptop Workstation Section (No Zoom) -->
-  <section class="min-h-screen py-16 w-full flex items-center justify-center px-4">
+  <!-- 2. Clean Laptop Workstation Section -->
+  <section class="min-h-screen py-16 w-full flex items-center justify-center px-4 bg-[#0b0f19]">
       
-      <!-- Laptop Structure (Fixed scale) -->
-      <div class="laptop-container w-[95%] max-w-[1000px] flex flex-col items-center">
-        
+      <div class="laptop-wrapper">
         <!-- Laptop Screen -->
         <div class="laptop-screen">
-          
           <!-- Inner CV Page (Scrollable inside the screen) -->
           <div class="inner-website absolute inset-0 w-full h-full bg-[#0a0f1d] overflow-y-auto p-6 md:p-10 flex flex-col gap-8 text-left">
             
@@ -113,7 +124,6 @@
               <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 border-l-2 border-emerald-500 pl-2">Professional Profile</h3>
               <p class="text-slate-300 text-sm leading-relaxed">
                 Graduate of Applied Informatics (UOM). <strong>Entry-level Java Developer</strong> focused on clean OOP code, backend service development (Spring Boot / Java ecosystem), and platform/application logic.
-
               </p>
             </section>
 
@@ -126,7 +136,7 @@
                   <span class="text-emerald-400 text-xs">Graduation: 2026</span>
                 </div>
                 <p class="text-slate-400 text-xs mt-1">
-                  <em>Track:</em> Computer Science and Technology. Coursework: OOP (Java), Parallel/Distributed Computing, Code Optimization, Data Structures, Databases, Software Engineering, Platform/App Dev.
+                  <em>Track:</em> Computer Science and Technology. Coursework: OOP (Java), Parallel/Distributed Computing, Code Optimization, Data Structures, Databases, Platform/App Dev.
                 </p>
               </div>
             </section>
@@ -135,10 +145,10 @@
             <section class="space-y-2">
               <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 border-l-2 border-emerald-500 pl-2">Technical Skills</h3>
               <ul class="text-xs md:text-sm text-slate-300 space-y-1 list-disc list-inside">
-                <li><strong>Languages:</strong> Java (OOP), C, Python, SQL, TypeScript</li>
-                <li><strong>Backend / Tools:</strong> Spring Boot (REST, Data/JPA), Swagger/OpenAPI, Git, Maven/Gradle, @Scheduled tasks</li>
-                <li><strong>Frameworks / IDEs:</strong> Java/Spring, Angular basics, IntelliJ IDEA, Eclipse, Android Studio</li>
-                <li><strong>Practices:</strong> Clean Code, OOP Design Patterns</li>
+                <li><strong>Languages:</strong> Java (OOP), C, TypeScript, SQL (JPA/Relational).</li>
+                <li><strong>Backend & Tools:</strong> Spring Boot (REST, Data/JPA), Swagger/OpenAPI, Git, Maven, @Scheduled tasks.</li>
+                <li><strong>Frameworks / IDEs:</strong> Spring Framework, Angular (basics).</li>
+                <li><strong>Practices:</strong> Clean Code, OOP Design Patterns, Refactoring.</li>
               </ul>
             </section>
 
@@ -164,19 +174,8 @@
                   <span class="text-xs text-slate-400 italic">Java / Spring Boot + Angular UI</span>
                 </div>
                 <ul class="text-xs text-slate-300 list-disc list-inside space-y-0.5 pl-2">
-                  <li>Developed backend service logic with Spring Boot for peer-to-peer skill-sharing workflows and structured data handling.</li>
+                  <li>Developed backend service logic with Spring Boot for peer-to-peer skill-sharing workflows and JPA data handling.</li>
                   <li>Integrated basic Angular frontend UI for platform interaction alongside modular OOP architecture.</li>
-                </ul>
-              </div>
-
-              <div class="space-y-1">
-                <div class="flex justify-between items-baseline flex-wrap text-sm">
-                  <a href="https://github.com/ArchontiaSam/GoGreen" target="_blank" class="font-bold text-white hover:text-emerald-400">GoGreen ↗</a>
-                  <span class="text-xs text-slate-400 italic">Java / Application Logic</span>
-                </div>
-                <ul class="text-xs text-slate-300 list-disc list-inside space-y-0.5 pl-2">
-                  <li>Application logic focused on tracking and gamifying eco-friendly habits and green actions.</li>
-                  <li>Structured data handling, user interaction workflows, and modular OOP architecture.</li>
                 </ul>
               </div>
             </section>
@@ -200,6 +199,11 @@
             </section>
 
           </div>
+        </div>
+
+        <!-- Laptop Base / Keyboard Lip -->
+        <div class="laptop-base">
+          <div class="laptop-trackpad-notch"></div>
         </div>
       </div>
 
